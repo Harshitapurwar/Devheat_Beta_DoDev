@@ -18,15 +18,5 @@ db.once('open', () => {
 });
 
 
-const user = new User({
-    id:1,
-    firstName:'Sparsh',
-    lastName :'Jhariya',
-    email:'sparsh3435@gmail.com'
-  })
-
-  user.save().then(result => {
-    console.log('Document saved successfully!');
-  });
 
 module.export = db;
