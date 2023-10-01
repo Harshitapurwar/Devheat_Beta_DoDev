@@ -1,60 +1,113 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <h1>hello</h1>
-    <form method="post" action="http://localhost/5001/users/add">
-        <input type="text" name="firstname" >
-        <input type="text" name="lastname" >
-        <input type="email" name="email">
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html> -->
+    <link rel="stylesheet" href="boxicons/css/boxicons.min.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Multiple Dropdown Lists</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-  <div class="dropdown-container">
-    <div class="dropdown">
-      <span class="dropdown-label">Dropdown 1:</span>
-      <select multiple class="custom-dropdown" id="dropdown1">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-        <option value="option4">Option 4</option>
-      </select>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>LOGO .</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#" class="link">Home</a></li>
+                    <li><a href="findfriends/friends.html" class="link">Find Friends</a></li>
+                    <li><a href="#" class="link">Hackathon</a></li>
+                    <li><a href="#" class="link">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="mymenufunction()"></i>
+            </div>
+        </nav>
+        <!-- Form box -->
+        
+        <div class="form-box">
+            <!-- Log in -->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    <header>Login</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" placeholder="Register">
+                </div>
+
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-box">Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Forgot password?</a></label>
+                    </div>
+                </div>
+            </div>
+            <!-- register form -->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                    <header>Sign Up</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" placeholder="Register">
+                </div>
+
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-box">Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Terms & condition</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="dropdown">
-      <span class="dropdown-label">Dropdown 2:</span>
-      <select multiple class="custom-dropdown" id="dropdown2">
-        <option value="option5">Option 5</option>
-        <option value="option6">Option 6</option>
-        <option value="option7">Option 7</option>
-        <option value="option8">Option 8</option>
-      </select>
-    </div>
-    <div id="users_list">
-      <div>
-        <p></p>
-        <h1></h1>
-      </div>
-      <div>
-        <p></p>
-        <h1></h1>
-      </div>
-      
-    </div>
-    
-  </div>
+
 </body>
-<script src="script.js"></script>
+
 </html>
+   
