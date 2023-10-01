@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {addUser , editUser} = require('../db/controller/userController')
+const {addUser , editUser, loginUser} = require('../db/controller/userController')
 
 router.get('/all', (req , res)=>{
     res.send('Trying to get users!')
@@ -22,6 +22,19 @@ router.post('/add' , async(req,res)=>{
     res.send(error)
    }
    
+})
+
+router.post('/login', async(req , res)=>{
+    const {email , password} = req.body
+
+    // console.log(email , password)
+    try {
+        const response = await loginUser(email , password)
+        return res.send(`login successfull , the token received is ${response}`)
+    } catch (error) {
+        console.log(error)
+        return res.send('Invalid Credentials')
+    }
 })
 
 module.exports = router

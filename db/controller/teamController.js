@@ -2,7 +2,7 @@ const Team = require('../models/TeamSchema')
 async function addTeam(user_id ,team1_name ){
     const team = new Team({
         id:user_id,
-        team1_:team1_name
+        teamname:team1_name
       })
     
       team.save().then(result => {

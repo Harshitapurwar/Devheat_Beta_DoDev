@@ -1,6 +1,8 @@
 const express = require('express')
 const db = require('./db/connection')
 const User = require('./db/models/UserSchema.js')
+const hackathon=require('./db/models/HackathonSchema.js')
+const teams=require('./db/models/TeamSchema.js')
 
 const app = express();
 

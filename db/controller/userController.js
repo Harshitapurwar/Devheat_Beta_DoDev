@@ -27,6 +27,19 @@ async function editUser(user_id , data){
         
 }
 
+async function loginUser(user_email , user_password){
+  const response = await User.findOne({email:user_email , password:user_password})
+  // console.log(response._id)
+  // return response._id
+  // console.log(response)
+  if(response==null){
+    return null
+  }
+  else{
+    return response._id
+  }
+}
+
 
 // add hackathon
 // update hackathon
@@ -38,4 +51,4 @@ async function editUser(user_id , data){
 // list friends
 
 
-module.exports = {addUser , editUser}
+module.exports = {addUser , editUser, loginUser}
