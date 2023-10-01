@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <!-- ===== ===== Custom Css ===== ===== -->
+    <link rel="stylesheet" href="Profile.css">
+    <link rel="stylesheet" href="ResponsiveProfile.css">
+
+    <!-- ===== ===== Remix Font Icons Cdn ===== ===== -->
+    <link rel="stylesheet" href="fonts/remixicon.css">
+</head>
+
+<body>
+    <!-- ===== ===== Body Main-Background ===== ===== -->
+    <span class="main_bg"></span>
+
+    <!-- ===== ===== Main-Container ===== ===== -->
+    <div class="container">
+
+
+        <!-- ===== ===== User Main-Profile ===== ===== -->
+        <section class="userProfile card">
+            <div class="profile">
+                <figure><img id="profileImage" src="profile.png" alt="profile" width="250px" height="250px"></figure>
+            </div>
+        </section>
+
+        <!-- ===== ===== Work & Skills Section ===== ===== -->
+        <section class="work_skills card">
+
+            <!-- ===== ===== Work Contaienr ===== ===== -->
+            <div class="work">
+                <h1 class="heading">work/Institute</h1>
+                <div class="primary">
+                    <h1 id="work1"></h1>
+                    <span>Primary</span>
+                    <p id="workaddress1"></p>
+                </div>
+
+                <div class="secondary">
+                    <h1 id="work2"></h1>
+                    <span>Secondary</span>
+                    <p id="workaddress2"></p>
+                </div>
+            </div>
+
+            <!-- ===== ===== Skills container ===== ===== -->
+            <div class="skills">
+                <h1 class="heading">Skills</h1>
+                <ul>
+                    <li style="--i:0" id="one"></li>
+                    <li style="--i:1" id="two"></li>
+                    <li style="--i:2" id="three"></li>
+                    <li style="--i:3" id="four"></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== ===== User Details Sections ===== ===== -->
+        <section class="userDetails card">
+            <div class="userName">
+                <h1 class="name" id="fullname"></h1>
+                <p id="Fwork"></p>
+            </div>
+            <div class="basic_info">
+                <h1 class="heading">Personality</h1>
+                <p class="nature" id="nature"></p>
+            </div>
+        </section>
+
+        <!-- ===== ===== About Sections ===== ===== -->
+        <section class="timeline_about card">
+            <div class="tabs">
+                <ul>
+                    <li class="about active">
+                        <i class="ri-user-3-fill ri"></i>
+                        <span>About</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact_Info">
+                <h1 class="heading">Contact Information</h1>
+                <ul>
+                    <li class="phone">
+                        <h1 class="label">Phone:</h1>
+                        <p class="info" id="phone"></p>
+                    </li>
+
+                    <li class="address">
+                        <h1 class="label">Address:</h1>
+                        <p class="info" id="address"></p>
+                    </li>
+
+                    <li class="email">
+                        <h1 class="label">E-mail:</h1>
+                        <p class="info" id="email"></p>
+                    </li>
+
+                    <li class="linkedin">
+                        <h1 class="label">Linkedin:</h1>
+                        <p class="info" id="linkedin"></p>
+                    </li>
+
+                    <li class="site">
+                        <h1 class="label">Site:</h1>
+                        <p class="info" id="website"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="basic_info">
+                <h1 class="heading">Gender</h1>
+                <p class="gender" id="sex"></p>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="Profile.js"></script>
+
+</html>

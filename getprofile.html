@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="getprofile.css" />
+</head>
+
+<body>
+    <section class="container">
+        <header>Registration Form</header>
+        <form class="form" autocomplete="on" onsubmit="return getvalue()">
+
+
+            <fieldset class="field">
+                <legend class="leg">User Details</legend>
+                <div class="column">
+                    <div class="input-box">
+                        <label>Full Name*</label>
+                        <input id="fullname" type="text" placeholder="Enter full name" required />
+                    </div>
+
+                    <div class="input-box">
+                        <label>Field of Work*</label>
+                        <input id="Fwork" type="text" placeholder="Enter field of work" required />
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label>Profile Picture*</label>
+                    <input type="file" id="profileImage" accept="image/*" required />
+                </div>
+            </fieldset>
+
+
+            <fieldset class="field">
+                <legend class="leg">Skills</legend>
+                <div class="column">
+                    <div class="input-box">
+                        <!-- <label>One*</label> -->
+                        <input type="text" placeholder="Enter skill" id="one" required />
+                    </div>
+                    <div class="input-box">
+                        <!-- <label>Two</label> -->
+                        <input id="two" type="text" placeholder="Enter skill" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input-box">
+                        <!-- <label>Three</label> -->
+                        <input id="three" type="text" placeholder="Enter skill" />
+                    </div>
+                    <div class="input-box">
+                        <!-- <label>Four</label> -->
+                        <input id="four" type="text" placeholder="Enter skill" />
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="field">
+                <legend class="leg">Work/Institution</legend>
+                <div class="column">
+                    <div class="input-box">
+                        <label>Company/Institute*</label>
+                        <input id="work1" type="text" placeholder="Enter Company/Institute" required />
+                    </div>
+
+                    <div class="input-box">
+                        <label>Address*</label>
+                        <input id="workaddress1" type="text" placeholder="Enter address of workplace" required />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input-box">
+                        <label>Company/Institute*</label>
+                        <input id="work2" type="text" placeholder="Enter Company/Institute" required />
+                    </div>
+
+                    <div class="input-box">
+                        <label>Address*</label>
+                        <input id="workaddress2" type="text" placeholder="Enter address of workplace" required />
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="field">
+                <legend class="leg">Gender*</legend>
+                <div class="gender-box">
+                    <div class="gender-option">
+                        <div class="gender">
+                            <input type="radio" id="check-male" name="gender" value="Male" checked />
+                            <label for="check-male">Male</label>
+                        </div>
+                        <div class="gender">
+                            <input type="radio" id="check-female" name="gender" value="Female" />
+                            <label for="check-female">Female</label>
+                        </div>
+                        <div class="gender">
+                            <input type="radio" id="check-other" name="gender" value="Prefer not to say" />
+                            <label for="check-other">Prefer not to say</label>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="field">
+                <legend class="leg">Contact</legend>
+                <div class="column">
+                    <div class="input-box">
+                        <label>Phone No.*</label>
+                        <input id="phone" type="text" placeholder="Enter phone no." required />
+                    </div>
+                    <div class="input-box">
+                        <label>Email*</label>
+                        <input id="email" type="text" placeholder="Enter email" required />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="input-box">
+                        <label>Website</label>
+                        <input id="website" type="text" placeholder="Enter website if any" />
+                    </div>
+                    <div class="input-box">
+                        <label>Linkedin Id*</label>
+                        <input id="linkedin" type="text" placeholder="Enter linkedin" required />
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="field">
+                <legend class="leg">Home Address*</legend>
+                <div class="input-box">
+                    <input id="address" type="text" placeholder="Enter Home Address" required />
+                </div>
+            </fieldset>
+
+            <fieldset class="field">
+                <legend class="leg">Personality*</legend>
+                <div class="input-box">
+                    <input id="nature" type="text" placeholder="Write about your Personality" required />
+                </div>
+            </fieldset>
+
+
+            <button>Submit</button>
+        </form>
+    </section>
+</body>
+<script src="getprofile.js"></script>
+
+</html>
