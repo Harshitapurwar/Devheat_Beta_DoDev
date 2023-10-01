@@ -8,7 +8,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-
 body {
     min-height: 100vh;
     display: flex;
@@ -17,7 +16,6 @@ body {
     padding: 20px;
     background: rgb(1, 99, 129);
     background: url(bg.png);
-
 }
 
 .line {
@@ -37,7 +35,6 @@ body {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(77, 210, 250, 0.1);
-
 }
 
 .block{
@@ -45,8 +42,10 @@ body {
     border: solid rgb(156, 240, 255);
     padding: 5px;
     border-radius: 15px;
+    width: 100%;
 }
-.column {
+
+.row {
     display: flex;
     column-gap: 2%;
     padding-bottom: 25px;
@@ -94,9 +93,13 @@ body {
     text-align: center;
 }
 /* Media Queries */
-@media screen and (max-width: 500px) {
-    .column {
-        flex-wrap: wrap;
+@media only screen and (max-width: 500px) {
+    .row {
+        column-gap: 5%; 
+    }
+
+    .block {
+        width: 100%; 
     }
 }
 
