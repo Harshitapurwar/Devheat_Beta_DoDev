@@ -3,7 +3,9 @@ async function addHackathon(user_id ,participant_count,participant_teams ){
     const hackathon = new Hackathon({
         id:user_id,
         pcount:participant_count,
-        // team: participant_teams
+        team: participant_teams,
+        Deadline:deadline,
+        Description:description,
       })
     
       hackathon.save().then(result => {

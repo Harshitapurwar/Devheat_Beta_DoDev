@@ -14,7 +14,7 @@ router.post('/add' , async(req,res)=>{
     const data= req.body
     console.log(data.id)
     try {
-     await addHackathon(data.id , data.pcount)
+     await addHackathon(data.id , data.pcount,data.Deadline,data.Description)
      res.send('HAckathon created successfully')
     } catch (error) {
      res.send(error)
