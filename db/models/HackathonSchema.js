@@ -5,9 +5,9 @@ const Schema = mongoose.Schema
 const hackathonSchema = new Schema({
     id:Number,
     pcount:Number,
-    Deadline:Number,
+    Deadline:String,
     Description:String,
-    participant_teams:[{type:mongoose.Schema.Types.ObjectId , ref:'participant'}]
+    participant_teams:[{type:mongoose.Schema.Types.ObjectId , ref:'Team'}]
 })
 
 
