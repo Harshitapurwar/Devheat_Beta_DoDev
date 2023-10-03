@@ -1,9 +1,13 @@
+const hackathon = require('../models/HackathonSchema');
 const Hackathon = require('../models/HackathonSchema')
-async function addHackathon(user_id ,participant_count,participant_teams ){
+const mongoose = require('mongoose')
+
+async function addHackathon(user_id ,participant_count,deadline,description){
     const hackathon = new Hackathon({
         id:user_id,
         pcount:participant_count,
-        // team: participant_teams
+        Deadline:deadline,
+        Description:description,
       })
     
       hackathon.save().then(result => {
@@ -13,9 +17,57 @@ async function addHackathon(user_id ,participant_count,participant_teams ){
       return 'Added'
     
 }
-async function editHackathon(user_id , data){
+async function editHackathon(hackathon_id , data){
         
 }
 
+async function addTeamToHackthon(hackthon_id , team_id){
 
-module.exports = {addHackathon , editHackathon}
+  // const hackthonOI =  mongoose.Types.ObjectId(hackthon_id)
+  // console.log(hackthonOI)
+  const hackthon = await Hackathon.findById(hackthon_id)
+
+  // console.log(hackthon)
+  if(!hackthon){
+    return "Not found"
+  }
+
+
+  const teamOI = new mongoose.Types.ObjectId(team_id)
+  hackthon.participant_teams.push(teamOI)
+
+  // console.log(hackthon)
+
+  await hackthon.save();
+
+  return "Done"
+  // return "Done"
+
+}
+
+async function getallhackathon(){
+  const responseall=await hackathon.find()
+  console.log(responseall)
+    if(responseall==null){
+      return null;
+    }
+    else{
+      return responseall;
+    
+    }
+}
+async function getonehackathon(id){
+  
+  const response=await hackathon.findById(id)
+    console.log('response:' , response)
+    if(response==null){
+      return null;
+    }
+    else{
+      return response;
+    
+    }
+  }
+
+
+module.exports = {addHackathon , editHackathon, addTeamToHackthon,getallhackathon,getonehackathon}

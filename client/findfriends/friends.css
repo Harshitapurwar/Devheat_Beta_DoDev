@@ -18,8 +18,13 @@ body{
     align-items: center;
 }
 .friends-container{
+<<<<<<< HEAD
    width:990px;
    height: 100vh;
+=======
+   width: 800px;
+   height: 90vh;
+>>>>>>> b48129c6d993d6090dddfe9ef02e97fdc8a0b19c
    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.253); 
    background-color: rgba(39, 39, 39, 0.4);
 }
@@ -28,7 +33,11 @@ body{
 }
 .friends-header .heading{
     color: #f1f1f1;
+<<<<<<< HEAD
     font-size: 40px;
+=======
+    font-size: 30px;
+>>>>>>> b48129c6d993d6090dddfe9ef02e97fdc8a0b19c
     font-weight: 100;
     width: 100%;
     text-align: center;
@@ -37,13 +46,18 @@ body{
 
 .friends-header .search{
     position: relative;
+<<<<<<< HEAD
     justify-content: end;
+=======
+ 
+    float:right;
+>>>>>>> b48129c6d993d6090dddfe9ef02e97fdc8a0b19c
 }
 .friends-header .search img{
-    position: absolute;
+    position: relative;
     width: 20px;
-    top: 15px;
-    left: 40px;
+    top: 5px;
+    left: 61px;
 
 }
 .friends-header .search input{
@@ -63,9 +77,17 @@ body{
 }
 
 .friends-body{
+    margin:17px;
     background-color: #fff;
+    display: flex;
+    padding: 1rem ;
+    align-items: center;
+    width:723px;
+    height: 30px;
+    border-radius: 5px;
 }
 .user-row{
+    margin:5px;
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
@@ -75,17 +97,31 @@ body{
     border-radius: 10px;
 }
 .user-info{
+   margin: 50px;
+   height: 2px;
     display: flex;
     align-items: center;
+    width: 50%;
 }
-.user-info img{
-    width: 70px;
+.user-row img{
+    /* width: 70px;
     border-radius: 50%;
+<<<<<<< HEAD
     margin-left: 5px;
+=======
+    margin-right: 15px; */
+    height:50px;
+width:50px;
+border-radius:50%;
+vertical-align: middle;
+>>>>>>> b48129c6d993d6090dddfe9ef02e97fdc8a0b19c
 }
 .user-info span{
+    margin: 5px;
+    padding: 5px ;
     color: black;
     font-weight: bold;
+<<<<<<< HEAD
     font-size: larger;
     margin-left: 10vh;
     display: flex;
@@ -94,12 +130,24 @@ body{
     border: none;
     outline: none;
     background: rgb(18, 17, 19);
+=======
+
+}
+ .right .action-follow{
+    /* border: none;
+    outline: none; */
+    /* display: flex; */
+    margin:280px;
+    float: right;
+    background: rgb(2,0,36);
+>>>>>>> b48129c6d993d6090dddfe9ef02e97fdc8a0b19c
     background-color: linear-gradient(rgba(39,39,39,0.6), transparent);
     border-radius: 40px;
     color: #fff;
     height: 40px;
     width: 150px;
     box-shadow: 2px 2px 10px rgba(111, 112, 113, 0.5);
+<<<<<<< HEAD
 }
 
 /* @media only screen and(max-width: 540px) {
@@ -130,3 +178,7 @@ body{
     }
     /* Add more responsive styles as needed */
 }
+=======
+    
+}
+>>>>>>> b48129c6d993d6090dddfe9ef02e97fdc8a0b19c

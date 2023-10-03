@@ -1,15 +1,37 @@
 const express = require('express')
 const router = express.Router()
-const {addUser , editUser, loginUser} = require('../db/controller/userController')
+const {addUser , editUser, loginUser, getalluser, getoneuser} = require('../db/controller/userController')
 
-router.get('/all', (req , res)=>{
-    res.send('Trying to get users!')
+
+
+// router.get('/:id' , (req , res)=>{
+//     const id = req.params.id
+//     res.send(`Getting user ${id}`)
+// })
+
+
+
+router.get('/all',async(req,res)=>{
+    try{
+        const response = await getalluser()
+        console.log(response)
+        return res.send(response)
+    }catch(error){
+        return res.send(error);
+    }
 })
 
-
-router.get('/:id' , (req , res)=>{
-    const id = req.params.id
-    res.send(`Getting user ${id}`)
+router.get('/oneuser/:id',async(req,res)=>{
+    try{
+        const id = req.params.id
+        console.log('trying')
+        const response = await getoneuser(id)
+        console.log( 'response',response)
+        return res.send(response)
+    }
+    catch(error){
+        return res.send(error);
+    }
 })
 
 router.post('/add' , async(req,res)=>{

@@ -38,7 +38,34 @@ async function loginUser(user_email , user_password){
   else{
     return response._id
   }
+
+
+  
 }
+async function getalluser(){
+  const responseall=await User.find()
+  console.log(responseall)
+    if(responseall==null){
+      return null;
+    }
+    else{
+      return responseall;
+    
+    }
+}
+
+async function getoneuser(id){
+  const response=await User.findById(id)
+    console.log(response)
+    if(response==null){
+      return null;
+    }
+    else{
+      return response;
+    
+    }
+  }
+
 
 
 // add hackathon
@@ -51,4 +78,4 @@ async function loginUser(user_email , user_password){
 // list friends
 
 
-module.exports = {addUser , editUser, loginUser}
+module.exports = {addUser , editUser, loginUser,getalluser,getoneuser}
