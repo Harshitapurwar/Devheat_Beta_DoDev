@@ -23,7 +23,7 @@
 //     email:"adfsg"
 // }
 // ]
-fetch('http://localhost:5000/user/all')
+fetch('http://localhost:5000/team/jointeamuser')
     .then((response) => response.json())
     .then((data) => {
         // Handle the JSON data here
@@ -48,10 +48,10 @@ function addUsers(data){
         const userinfo=document.createElement('div');
         userrow.appendChild(userinfo);
         userinfo.classList.add("user-info");
-        const img=document.createElement('img');
-        userinfo.appendChild(img);
-        img.src='download.png';
-        img.alt = 'User';
+        // const img=document.createElement('img');
+        // userinfo.appendChild(img);
+        // img.src='';
+        // img.alt = 'User';
         const span=document.createElement('span');
         userinfo.appendChild(span);
         span.innerText = `${data[i].firstName} : Skills(${data[i].skills})`;

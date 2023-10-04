@@ -30,3 +30,15 @@
          x.style.opacity = 0;
          y.style.opacity = 1;
      }
+
+     function loginuser(){
+        const container = document.getElementById('form');
+        if(localStorage.getItem('token')!=null){
+            container.style.zIndex = "-1";
+        }
+        else{
+            container.style.zIndex="1";
+        }
+        
+        
+     }

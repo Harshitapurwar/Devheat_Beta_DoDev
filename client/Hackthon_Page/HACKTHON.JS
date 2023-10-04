@@ -31,14 +31,13 @@
 //     Link: "https://www.sih.gov.in"
 // },
 // ];
-fetch('http://localhost:5000/hackathon/hack')
+fetch('http://localhost:5000/user/all')
     .then((response) => response.json())
     .then((data) => {
         // Handle the JSON data here
         // console.log('hello')
-        console.log(data);
+        // console.log(data);
         hackathon(data)
-        console.log("hello");
         // You can now display or manipulate the data in your HTML
     })
     .catch((error) => {
@@ -71,8 +70,8 @@ function hackathon(data) {
 
         const infoParagraphs = [
             `Venue : ${hackathonData.Venue}`,
-            `Deadline : ${hackathonData.Deadline}`,
-            `Max Team Members : ${hackathonData.pcount}`,
+            `Dates : ${hackathonData.Dates}`,
+            `Max Team : ${hackathonData.Team}`,
             `Description : ${hackathonData.Description}`
         ];
 

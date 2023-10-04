@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dancing+Script&family=Lugrasimo&family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: url("./images/bl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.friends-container{
+   width:990px;
+   height: 100vh;
+   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.253); 
+   background-color: rgba(39, 39, 39, 0.4);
+}
+.friends-header{
+    background-color: linear-gradient(rgba(39,39,39,0.6), transparent);
+}
+.friends-header .heading{
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.friends-header .search{
+    position: relative;
+    justify-content: end;
+}
+.friends-header .search img{
+    position: relative;
+    width: 20px;
+    top: 5px;
+    left: 61px;
+
+}
+.friends-header .search input{
+    border: none;
+    outline: none;
+    margin: 0 25px 25px 25px;
+    width: calc(100%-150px);
+    font-size: 16px;
+    color: #0d0d0e;
+    background-color: linear-gradient(rgba(39,39,39,0.6), transparent);
+    padding: 15px 50px;
+    border-radius: 40px;
+}
+.friends-header .search input::placeholder{
+    color: rgba(0,0,0, 0.5);
+
+}
+
+.friends-body{
+    margin:17px;
+    background-color: #fff;
+    display: flex;
+    padding: 1rem ;
+    align-items: center;
+    width:723px;
+    height: 30px;
+    border-radius: 5px;
+}
+.user-row{
+    margin:5px;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.user-info{
+   margin: 50px;
+   height: 2px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+/* .user-row img{
+ width: 70px;
+    border-radius: 50%;
+    margin-left: 5px;
+} */
+.user-info span{
+    margin: 5px;
+    padding: 5px ;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 10vh;
+    display: flex;
+}
+.action-follow{
+    border: none;
+    outline: none;
+    background: rgb(18, 17, 19);
+    background-color: linear-gradient(rgba(39,39,39,0.6), transparent);
+    border-radius: 40px;
+    color: #fff;
+    height: 40px;
+    width: 150px;
+    box-shadow: 2px 2px 10px rgba(111, 112, 113, 0.5);
+}
+
+/* @media only screen and(max-width: 540px) {
+    .friends-container{
+       min-height: 100vh;
+    }
+    .friends-header{
+        width: 100%;
+        height: 500px;
+    }
+    .friends-body{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .friends-body .user-info .user-row .action-follow{
+        flex-direction: column;
+        gap: 0;
+    }
+} */
+
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .friends-container {
+        width: 100%;
+    }
+    /* Add more responsive styles as needed */
+}
