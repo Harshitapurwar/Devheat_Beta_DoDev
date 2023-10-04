@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const TeamSchema = new Schema({
-    id:Number,
     teamname:String,
     users: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user'}],
    

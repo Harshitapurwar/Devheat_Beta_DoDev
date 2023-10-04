@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {addUser , editUser, loginUser, getalluser, getoneuser} = require('../db/controller/userController')
+
+const {addUser , editUser, loginUser, getalluser, getoneuser, addfriends} = require('../db/controller/userController')
 
 
 
@@ -34,9 +35,9 @@ router.get('/oneuser/:id',async(req,res)=>{
     }
 })
 
-router.post('/add' , async(req,res)=>{
+router.post('/signup' , async(req,res)=>{
    const data= req.body
-   console.log(data.firstName)
+   console.log(data)
    try {
     await addUser(data.firstName , data.lastName , data.email, data.password)
     res.send('User created successfully')
@@ -49,15 +50,34 @@ router.post('/add' , async(req,res)=>{
 router.post('/login', async(req , res)=>{
     const {email , password} = req.body
 
-    // console.log(email , password)
+    console.log(email , password)
     try {
         const response = await loginUser(email , password)
+        console.log(response)
         return res.send(`login successfull , the token received is ${response}`)
     } catch (error) {
         console.log(error)
         return res.send('Invalid Credentials')
     }
 })
+
+
+//add friend
+router.post('/addfriend', async(req , res)=>{
+    const {id1 , id2} = req.body
+
+    console.log(id1 , id2)
+    try {
+        const response = await addfriends(id1,id2)
+        console.log(response)
+        return res.send(`friend added succcessful ${response}`)
+    } catch (error) {
+        console.log(error)
+        return res.send('frinds not added')
+    }
+})
+
+
 
 module.exports = router
 

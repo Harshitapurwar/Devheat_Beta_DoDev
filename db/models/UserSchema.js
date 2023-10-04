@@ -10,7 +10,8 @@ const userSchema = new Schema({
     github_id:String,
     skills:[String], // web, app , ai , blockchain
     friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    hackathons:[{type:mongoose.Schema.Types.ObjectId , ref:'Hackathon'}]
+    hackathons:[{type:mongoose.Schema.Types.ObjectId , ref:'Hackathon'}],
+    teams:[{type:mongoose.Schema.Types.ObjectId , ref:'Team'}]
 })
 
 const User = mongoose.model('User' , userSchema)

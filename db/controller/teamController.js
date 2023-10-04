@@ -1,10 +1,11 @@
 const Team = require('../models/TeamSchema')
 const mongoose = require('mongoose')
+const User=require('../models/UserSchema')
 async function addTeam(user_id ,team1_name ){
     const team = new Team({
-        id:user_id,
-        teamname:team1_name,
         
+        teamname:team1_name,
+        participants:[user_id]
       })
     
       team.save().then(result => {
@@ -66,7 +67,24 @@ async function getoneteam(id){
     }
   }
 
+  //join team and user
+  async function jointeamanduser(team_id,user_id){
+    const user1=await User.findById(user_id)
+      console.log(user1)
+      
+     const team1=await Team.findById(team_id)
+     console.log("team1")
+     const teamid1 = new mongoose.Types.ObjectId(team_id)
+     const userid1 =new mongoose.Types.ObjectId(user_id);
+     team1.users.push(userid1);
+     user1.teams.push(teamid1);
+     await user1.save();
+     await team1.save();
+     return "done!"
+    }
 
 
 
-module.exports = {addTeam , editTeam, addHackthonToTeam,getallteam,getoneteam}
+
+
+module.exports = {addTeam , editTeam, addHackthonToTeam,getallteam,getoneteam,jointeamanduser}

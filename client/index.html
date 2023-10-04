@@ -43,16 +43,17 @@
                     <header>Login</header>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Email">
+                    <input type="text" class="input-field" placeholder="Email" id="email_login">
                     <i class="bx bx-user"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password">
+                    <input type="password" class="input-field" placeholder="Password" id="pass_login">
+                    
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
-                    <input type="submit" class="submit" placeholder="Register">
+                    <input type="submit" onclick="loginUser()" class="submit" placeholder="Register">
                 </div>
 
                 <div class="two-col">
@@ -73,25 +74,33 @@
                 </div>
                 <div class="two-forms">
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Firstname">
+                        <input type="text" class="input-field" 
+                        id = 'firstname_su'
+                        placeholder="Firstname">
                         <i class="bx bx-user"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Lastname">
+                        <input type="text" class="input-field" 
+                        id = "lastname_su"
+                        placeholder="Lastname">
                         <i class="bx bx-user"></i>
                     </div>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Email">
+                    <input type="text" class="input-field" 
+                    id = "email_su"
+                    placeholder="Email">
                     <i class="bx bx-envelope"></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password">
+                    <input type="password" class="input-field" 
+                    id = "password_su"
+                    placeholder="Password">
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
-                    <input type="submit" class="submit" placeholder="Register">
+                    <input type="submit" onclick="registerUser()" class="submit" placeholder="Register">
                 </div>
 
                 <div class="two-col">

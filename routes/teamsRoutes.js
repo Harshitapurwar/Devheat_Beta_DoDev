@@ -1,6 +1,6 @@
 const express = require('express')
 const { addHackathon } = require('../db/controller/hackathonController')
-const { addTeam , getallteam, getoneteam } = require('../db/controller/teamController')
+const { addTeam , getallteam, getoneteam, jointeamanduser } = require('../db/controller/teamController')
 const { getoneuser } = require('../db/controller/userController')
 const router = express.Router()
 
@@ -39,17 +39,32 @@ router.get('/oneteam/:id',async(req,res)=>{
     }
 })
 
-router.post('/add' , async(req,res)=>{
+router.post('/addteam' , async(req,res)=>{
     const data= req.body
     console.log(data.teamname)
     try {
-     await addTeam(data.id , data.teamname)
+     await addTeam(data.user_id, data.team1_name)
      res.send('Team created successfully')
     } catch (error) {
      res.send(error)
     }
     
  })
+
+ //joinfriendandtaem
+ router.post('/jointeamuser', async(req , res)=>{
+    const {team_id,user_id} = req.body
+
+    console.log()
+    try {
+        const response = await jointeamanduser(team_id,user_id)
+        console.log(response)
+        return res.send(`friend added to team and return succcessful ${response}`)
+    } catch (error) {
+        console.log(error)
+        return res.send('team and user not joined')
+    }
+})
 
 
 

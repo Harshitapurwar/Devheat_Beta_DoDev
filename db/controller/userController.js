@@ -1,5 +1,5 @@
 const User = require('../models/UserSchema')
-
+const mongoose=require('mongoose')
 
 // add user
 // update user
@@ -67,6 +67,46 @@ async function getoneuser(id){
   }
 
 
+  async function addfriends(id1,id2){
+    const user1=await User.findById(id1)
+      console.log(user1)
+      if(id1==null){
+        return null;
+      }
+     const user2=await User.findById(id2)
+     console.log("user 2")
+     const userid1 = new mongoose.Types.ObjectId(id1)
+     const userid2 =new mongoose.Types.ObjectId (id2);
+     user2.friends.push(userid1);
+     user1.friends.push(userid2);
+     await user1.save();
+     await user2.save();
+     return "done!"
+    }
+
+    //// Array to store selected friend user IDs
+// const selectedFriends = [];
+
+// // Function to add a friend to the selected list
+// function addFriend(userId) {
+//     // Check if the user ID is already in the selectedFriends array
+//     if (!selectedFriends.includes(userId)) {
+//         // If not, add it to the array
+//         selectedFriends.push(userId);
+//     }
+
+//     // Display the selected friend user IDs
+//     updateSelectedFriendsList();
+// }
+
+// // Function to update the list of selected friends in the HTML
+// function updateSelectedFriendsList() {
+//     const selectedFriendsSpan = document.getElementById('selected-friends');
+//     selectedFriendsSpan.textContent = selectedFriends.join(', ');
+// }
+
+
+
 
 // add hackathon
 // update hackathon
@@ -78,4 +118,4 @@ async function getoneuser(id){
 // list friends
 
 
-module.exports = {addUser , editUser, loginUser,getalluser,getoneuser}
+module.exports = {addUser , editUser, loginUser,getalluser,getoneuser,addfriends}
