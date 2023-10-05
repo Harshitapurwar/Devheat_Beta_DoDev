@@ -41,9 +41,9 @@ router.get('/oneteam/:id',async(req,res)=>{
 
 router.post('/addteam' , async(req,res)=>{
     const data= req.body
-    console.log(data.teamname)
+    console.log(data.team_name)
     try {
-     await addTeam(data.user_id, data.team1_name)
+     await addTeam(data.user_id, data.team_name)
      res.send('Team created successfully')
     } catch (error) {
      res.send(error)

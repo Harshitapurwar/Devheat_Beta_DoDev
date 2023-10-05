@@ -39,8 +39,8 @@ router.post('/signup' , async(req,res)=>{
    const data= req.body
    console.log(data)
    try {
-    await addUser(data.firstName , data.lastName , data.email, data.password)
-    res.send('User created successfully')
+    const response = await addUser(data.firstName , data.lastName , data.email, data.password, data.skills)
+    res.json({id:response})
    } catch (error) {
     res.send(error)
    }
@@ -53,8 +53,9 @@ router.post('/login', async(req , res)=>{
     console.log(email , password)
     try {
         const response = await loginUser(email , password)
-        console.log(response)
-        return res.send(`login successfull , the token received is ${response}`)
+        // console.log(response)
+        // return res.send(response)
+        return res.json({"id":response})
     } catch (error) {
         console.log(error)
         return res.send('Invalid Credentials')

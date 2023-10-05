@@ -7,19 +7,21 @@ const mongoose=require('mongoose')
 // read user -> single
 //            -> multiple users
 
-async function addUser (f_name , l_name , user_email,pass_word ){
+async function addUser (f_name , l_name , user_email,pass_word, skills ){
     const user = new User({
         firstName:f_name,
         lastName :l_name,
         email:user_email,
-        password:pass_word
+        password:pass_word,
+        skills:skills,
+        github_id:null
       })
     
-      user.save().then(result => {
-        console.log('Document saved successfully!');
-      });
+      const response = await user.save()
+      
 
-      return 'Added'
+      return response._id
+      
     
 }
 
@@ -29,7 +31,7 @@ async function editUser(user_id , data){
 
 async function loginUser(user_email , user_password){
   const response = await User.findOne({email:user_email , password:user_password})
-  // console.log(response._id)
+  console.log(response._id)
   // return response._id
   // console.log(response)
   if(response==null){
@@ -116,6 +118,8 @@ async function getoneuser(id){
 // add friend
 // remove friends
 // list friends
+
+
 
 
 module.exports = {addUser , editUser, loginUser,getalluser,getoneuser,addfriends}

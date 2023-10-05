@@ -80,7 +80,8 @@ function hackathon(data) {
         createTeamButton.innerText = 'Create Team';
         buttonDiv.appendChild(createTeamButton);
         createTeamButton.addEventListener('click', function () {
-            const filePath = '/client/findfriends/friends.html';
+            
+            const filePath = '/client/createTeam.html';
             window.open(filePath, '_self');
         });
 

@@ -1,4 +1,5 @@
-
+const login_btn_fn = document.getElementById('login_btn_fn')
+login_btn_fn.addEventListener('click' , loginUser)
    
     function mymenufunction() {
      var i = document.getElementById("navMenu");
@@ -57,29 +58,30 @@ async function registerUser(){
   };
   
   // Make a POST request using the fetch() API
-  fetch("http://localhost:5000/user/signup", {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(data)// Convert data to JSON string if needed
-  })
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("HTTP error, status = " + response.status);
-      }
-      return response.json(); // Parse the response as JSON
+  try {
+    const response  = await fetch("http://localhost:5000/user/signup", {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data)// Convert data to JSON string if needed
     })
-    .then(function (data) {
-      // Handle the JSON response data
-      console.log(data);
-    })
-    .catch(function (error) {
-      // Handle any errors that occurred during the fetch
-      console.error("Fetch error:", error);
-    });
+    if (response.ok) {
+      const responseData = await response.json(); // Assuming the response is JSON
+      localStorage.setItem('userId', responseData.id);
+    } else {
+      console.error("Request failed with status:", response.status);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+
+  toggleMenu()
+
+  window.alert('signup successfull!')
+    
 }
     //login user
 
-    async function loginUser(){
+async function loginUser(){
        
        var email  = document.getElementById('email_login').value
        var password = document.getElementById('pass_login').value
@@ -90,57 +92,60 @@ async function registerUser(){
         email:email,
         password:password
         }
-
-        
-    
-        //console.log(data)
-      
-      // Define the request headers (optional)
       const headers = {
         'Content-Type': 'application/json', 
       };
       
       // Make a POST request using the fetch() API
-      fetch("http://localhost:5000/user/login", {
+  
+      try{
+      console.log('start')
+      const response = await fetch("http://localhost:5000/user/login", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(data)// Convert data to JSON string if needed
       })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error("HTTP error, status = " + response.status);
-          }
-          return response.json(); // Parse the response as JSON
-        })
-        .then(function (data) {
-          // Handle the JSON response data
-          console.log(data);
-        })
-        .catch(function (error) {
-          // Handle any errors that occurred during the fetch
-          console.error("Fetch error:", error);
-        });
 
-
-        // Saving the token
-const emaillogin = "email_login";
-localStorage.setItem("authToken", emaillogin);
-
-// Retrieving the token
-// const savedToken = localStorage.getItem("authToken");
-
-// // Expected token for verification
-// const expectedToken = "email_login";
-
-// if (savedToken === expectedToken) {
-//     // Token is valid
-//     console.log("Token is valid.");
-// } else {
-//     // Token is not valid
-//     console.log("Token is not valid.");
-// }
-// Clearing the token
-localStorage.removeItem("authToken");
-
-
+      if (response.ok) {
+        const responseData = await response.json(); // Assuming the response is JSON
+        localStorage.setItem('userId', responseData.id);
+      } else {
+        console.error("Request failed with status:", response.status);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+      console.log('akhir')
+      toggleMenu()
+      window.alert('login successfull!')
 }
+
+
+function toggleMenu(){
+  const isLoggedIn = localStorage.getItem('userId')
+
+const loginSignupMenu= document.getElementById('login-signup')
+const logoutBtn = document.getElementById('logout-btn')
+
+if(isLoggedIn!==null){
+  loginSignupMenu.style.display = 'None'
+  logoutBtn.style.display = 'block'
+}
+else{
+  loginSignupMenu.style.display = 'block'
+  logoutBtn.style.display = 'None'
+}
+}
+
+function logout(){
+  localStorage.removeItem('userId');
+  toggleMenu()
+}
+
+toggleMenu()
+
+
+
+
+
+

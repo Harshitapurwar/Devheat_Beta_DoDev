@@ -12,7 +12,7 @@ const router = express.Router()
 //     const name = req.params.id;
 //     res.send(`hackathon name is ${name}`)
 // })
-router.get('/hack',async(req,res)=>{
+router.get('/allhack',async(req,res)=>{
     try{
         const response = await getallhackathon()
         console.log(response)
@@ -29,7 +29,7 @@ router.get('/onehackathon/:id',async(req,res)=>{
         console.log('trying')
         const response = await getonehackathon(id)
         console.log( 'response',response)
-        return res.send(response)
+        return res.send({'user_id':response})
     }
     catch(error){
         return res.send(error);
@@ -40,9 +40,8 @@ router.get('/onehackathon/:id',async(req,res)=>{
 
 router.post('/add' , async(req,res)=>{
     const data= req.body
-    console.log(data.id)
     try {
-     await addHackathon(data.id , data.pcount,data.Deadline,data.Description,data.participant_teams)
+     await addHackathon(data.name , data.pcount,data.Deadline,data.Description)
      res.send('HAckathon created successfully')
     } catch (error) {
      res.send(error)

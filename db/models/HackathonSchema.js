@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const hackathonSchema = new Schema({
-    id:Number,
+    name:String,
     pcount:Number,
     Deadline:String,
     Description:String,

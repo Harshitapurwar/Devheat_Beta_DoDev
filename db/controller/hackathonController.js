@@ -2,9 +2,9 @@ const hackathon = require('../models/HackathonSchema');
 const Hackathon = require('../models/HackathonSchema')
 const mongoose = require('mongoose')
 
-async function addHackathon(user_id ,participant_count,deadline,description){
+async function addHackathon(name , participant_count,deadline,description){
     const hackathon = new Hackathon({
-        id:user_id,
+        name:name,
         pcount:participant_count,
         Deadline:deadline,
         Description:description,

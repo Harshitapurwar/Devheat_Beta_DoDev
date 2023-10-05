@@ -2,21 +2,53 @@ const Team = require('../models/TeamSchema')
 const mongoose = require('mongoose')
 const User=require('../models/UserSchema')
 async function addTeam(user_id ,team1_name ){
+   const userid = new mongoose.Types.ObjectId(user_id)
+  
     const team = new Team({
         
         teamname:team1_name,
-        participants:[user_id]
+        users:[userid]
       })
     
-      team.save().then(result => {
-        console.log('Document saved successfully!');
-      });
+      const newteam = await team.save()
+
+      const user = await User.findById(user_id)
+      console.log(newteam)
+      console.log(newteam._id)
+      
+      user.teams.push(newteam._id)
+
+      await user.save()
 
       return 'Added'
     
 }
 async function editTeam(user_id , data){
     
+}
+
+async function addusertoteam(user_id){
+
+  // const hackthonOI =  mongoose.Types.ObjectId(hackthon_id)
+  // console.log(hackthonOI)
+  const userid = await Team.findById(user_id)
+
+  // console.log(hackthon)
+  if(!userid){
+    return "Not found"
+  }
+
+
+  const userid1 = new mongoose.Types.ObjectId(user_id)
+  userid.team.push(userid1)
+
+  // console.log(hackthon)
+
+  await userid.save();
+
+  return "Done"
+  // return "Done"
+
 }
 
 async function addHackthonToTeam(hackthon_id , team_id){
@@ -73,7 +105,7 @@ async function getoneteam(id){
       console.log(user1)
       
      const team1=await Team.findById(team_id)
-     console.log("team1")
+     console.log(team1)
      const teamid1 = new mongoose.Types.ObjectId(team_id)
      const userid1 =new mongoose.Types.ObjectId(user_id);
      team1.users.push(userid1);
