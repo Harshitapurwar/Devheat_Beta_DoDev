@@ -17,6 +17,8 @@ Full-Stack Website for Finding Teammates on basis of skills
     <img src="https://img.shields.io/badge/Postman-API%20Development-ff6c37?style=flat-square&logo=postman" alt="Postman" width="250"/>
 </a>
 
+## Postman
+<a href="https://www.postman.com/bold-robot-329243/workspace/my-workspace">Go to Our Postman Collection</a>
 
 ## 🚀 Features
 - Login/Signup User Account
