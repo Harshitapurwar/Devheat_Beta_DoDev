@@ -28,17 +28,17 @@ Full-Stack Website for Finding Teammates on basis of skills
 
 
 ## Sneak Peek of Website 🙈 :
-![home](https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/tanya/Screenshot%202023-06-23%20012307.png)
+![home](https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/master/screenshots/home.jpg)
 
 
 <table>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/64949957/159116105-15b9425c-1fec-4a52-84ba-cf97eef93891.png" alt="mockup" /></td>
-    <td><img src="https://user-images.githubusercontent.com/64949957/159116112-1c7dec3e-0f3a-45a8-83d3-6d6b9ee1d5de.png" alt="mockups" /></td>
+    <td><img src="https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/master/screenshots/about.jpg" alt="mockup" /></td>
+    <td><img src="https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/master/screenshots/friends.jpg" alt="mockups" /></td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/64949957/159116115-46f15626-372d-4349-8ef4-a04a70600dcc.png" alt="mockup" /></td>
-    <td><img src="https://user-images.githubusercontent.com/64949957/159116118-ac3d261b-eb50-4a7b-a8e6-cd1a0f5720de.png" alt="mockups" /></td>
+    <td><img src="https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/master/screenshots/hacka.jpg" alt="mockup" /></td>
+    <td><img src="https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/master/screenshots/login.jpg" alt="mockups" /></td>
   </tr>
 </table>
 
@@ -82,8 +82,8 @@ If you want to contact me, you can reach me through below handles.
 **Tanya**
 [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tanya-purwar-638a54262)
 **Harshita**
-[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tanya-purwar-638a54262)
+[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harshita-purwar-832790262/)
 **Divyanshu**
-[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tanya-purwar-638a54262)
+[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/divyanshu-vishwakarma-bb86aa247)
 
 @Searching for Teammates
