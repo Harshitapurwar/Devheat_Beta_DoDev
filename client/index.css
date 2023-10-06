@@ -33,10 +33,16 @@
     background-color: linear-gradient(rgba(39,39,39,0.6), transparent);
     z-index: 100;
   }
+  /* .nav-logo p img{
+    color: white;
+    font-size: 25px;
+     font-weight: 500; 
+    text-align:unset;
+  }  */
   .nav-logo p{
     color: white;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 100;
   } 
   .nav-menu ul{
     display:flex;
@@ -69,6 +75,7 @@
   .btn:hover{
     background: rgba(255,255,255,0.3);
   }
+  
   #registerBtn{
     margin-left: 15px;
   }
@@ -80,6 +87,18 @@
   }
 .nav-menu-btn{
   display: none;
+}
+#logout-btn{
+  width: 130px;
+  margin-block: 30px;
+   height: 40px;
+   text-align: center;
+   font-weight: 500;
+   background: rgba(255,255,255,0.4);
+   border: none;
+   border-radius: 30px;
+   cursor: pointer;
+   transition: .3s ease;
 }
 .form-box{
     position: relative;

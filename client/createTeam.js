@@ -9,27 +9,29 @@ async function createTeam(){
     console.log(data)
 
 
-    fetch("http://localhost:5000/team/addteam", {
+    
+
+  try{
+    console.log('start')
+    const response = await fetch("http://localhost:5000/team/addteam", {
     method: "POST",
     headers: headers,
     body: JSON.stringify(data)// Convert data to JSON string if needed
   })
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("HTTP error, status = " + response.status);
-      }
 
-      console.log(response.json())
-      return response.json(); // Parse the response as JSON
-    })
-    .then(function (data) {
-      // Handle the JSON response data
-      console.log(data);
-    })
-    .catch(function (error) {
-      // Handle any errors that occurred during the fetch
-      console.error("Fetch error:", error);
-    });
+    if (response.ok) {
+      const responseData = await response.json(); // Assuming the response is JSON
+      console.log(responseData)
+      localStorage.setItem('currentTeam', responseData.id);
+    } else {
+      console.error("Request failed with status:", response.status);
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+
+
+    
 
 
     const filePath = './findfriends/friends.html';

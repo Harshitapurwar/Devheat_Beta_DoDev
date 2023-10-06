@@ -25,20 +25,82 @@
 // ]
 
 var selected_user_id = ''
-fetch('http://localhost:5000/user/all')
-    .then((response) => response.json())
-    .then((data) => {
-        // Handle the JSON data here
-        // console.log('hello')
-        // console.log(data);
-        addUsers(data)
-        // You can now display or manipulate the data in your HTML
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
+// fetch('http://localhost:5000/user/')
+    // .then((response) => response.json())
+    // .then((data) => {
+    //     // Handle the JSON data here
+    //     // console.log('hello')
+    //     // console.log(data);
+    //     addUsers(data)
+    //     // You can now display or manipulate the data in your HTML
+    // })
+    // .catch((error) => {
+    //     console.error('Error:', error);
+    // });
 
-addUsers(data);
+// addUsers(data);
+
+fetchData('http://localhost:5000/user/all');
+
+
+async function fetchData(url) {
+    try {
+        // Make a GET request to the specified URL
+        const response = await fetch(url);
+
+        // Check if the response status code indicates success (e.g., 200 OK)
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status:, ${response.status}`);
+        }
+
+        // Parse the response body as JSON
+        data = await response.json();
+
+        // Return the parsed data
+        console.log(data);
+        addUsers(data);
+        return data;
+    } catch (error) {
+        // Handle any errors that occurred during the fetch or parsing
+        console.error("Error fetching data:", error);
+        throw error; // Optionally, rethrow the error to be handled elsewhere
+    }
+}
+// addUsers(data);
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput"); 
+    // const searchInput="app";
+    // console.log(searchInput);
+
+    // Add an event listener to the search input
+    searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        // If the search term is empty, display all users
+        if (!searchTerm) {
+            clearUsers();
+            addUsers(data);
+            return;
+        }
+
+        // user.skills.toLowerCase().includes(searchTerm)
+        // Filter the data based on the search term
+        const filteredData = data.filter(user =>
+            user.firstName.toLowerCase().includes(searchTerm)
+            || user.skills.some(skill => skill.toLowerCase().includes(searchTerm))
+        );
+
+        // Clear the existing users
+        clearUsers();
+
+        // Add the filtered users
+        addUsers(filteredData);
+    });
+});
+function clearUsers() {
+    const friendsBody = document.getElementById("friends-body");
+    friendsBody.innerHTML = "";
+}
 function addUsers(data){
     // console.log(data)
     const user=document.getElementById('friends-body');
@@ -57,7 +119,7 @@ function addUsers(data){
         img.alt = 'User';
         const span=document.createElement('span');
         userinfo.appendChild(span);
-        span.innerText = `${data[i].name} : Skills(${data[i].email})`;
+        span.innerText = `${data[i].firstName} : Skills(${data[i].skills})`;
         // const span1=document.createElement('span');
         // userinfo.appendChild(span1);
         // span.innerText = `${data[i].email}`;
@@ -67,10 +129,19 @@ function addUsers(data){
         button.addEventListener('click' , function(){
             
             joinTeam(button.id)
+            window.alert('member added successfully!')
         })
+        button.addEventListener('click', function () {
+            window.open('/client/teamlist/team.html', '_self');
+            
+
+        });
         
         userrow.appendChild(button);
         button.innerText="Add in team";
+
+
+
 
     }
 }
@@ -119,3 +190,7 @@ async function joinTeam(id){
 
 
 }
+// $(function(){
+//     // Load the navigation bar using jQuery
+//     $("#navbar").load("navbar/navbar.html");
+//   });

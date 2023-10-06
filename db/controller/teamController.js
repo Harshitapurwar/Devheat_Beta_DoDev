@@ -18,9 +18,9 @@ async function addTeam(user_id ,team1_name ){
       
       user.teams.push(newteam._id)
 
-      await user.save()
+      const response = await user.save()
 
-      return 'Added'
+      return newteam._id
     
 }
 async function editTeam(user_id , data){

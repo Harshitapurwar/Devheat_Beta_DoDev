@@ -1,0 +1,10 @@
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+add the above script inside head 
+
+
+just after body add following div
+<div id="navbar"></div>
+
+
+After that update margin for page's elements

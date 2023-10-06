@@ -2,7 +2,9 @@ const express = require('express')
 const { addHackathon } = require('../db/controller/hackathonController')
 const { addTeam , getallteam, getoneteam, jointeamanduser } = require('../db/controller/teamController')
 const { getoneuser } = require('../db/controller/userController')
+const User = require('../db/models/UserSchema')
 const router = express.Router()
+
 
 
 // router.get('/tt', (req , res)=>{
@@ -43,8 +45,8 @@ router.post('/addteam' , async(req,res)=>{
     const data= req.body
     console.log(data.team_name)
     try {
-     await addTeam(data.user_id, data.team_name)
-     res.send('Team created successfully')
+      const response = await addTeam(data.user_id, data.team_name)
+     res.json({id:response})
     } catch (error) {
      res.send(error)
     }
@@ -65,6 +67,9 @@ router.post('/addteam' , async(req,res)=>{
         return res.send('team and user not joined')
     }
 })
+
+
+
 
 
 

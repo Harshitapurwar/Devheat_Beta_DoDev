@@ -1,38 +1,52 @@
-data = [{
-    Hackathon: "Smart India Hackathon",
-    Venue: "Government of India",
-    Dates: "30 October 2023",
-    Team: "3 Members",
-    Description: "Hello SIH",
-    Link: "https://www.sih.gov.in"
-},
-{
-    Hackathon: "Smart India Hackathon",
-    Venue: "Government of India",
-    Dates: "30 October 2023",
-    Team: "3 Members",
-    Description: "Hello SIH",
-    Link: "https://www.sih.gov.in"
-},
-{
-    Hackathon: "Smart India Hackathon",
-    Venue: "Government of India",
-    Dates: "30 October 2023",
-    Team: "3 Members",
-    Description: "Hello SIH",
-    Link: "https://www.sih.gov.in"
-},
-{
-    Hackathon: "Smart India Hackathon",
-    Venue: "Government of India",
-    Dates: "30 October 2023",
-    Team: "3 Members",
-    Description: "Hello SIH",
-    Link: "https://www.sih.gov.in"
-},
-];
+// data = [{
+//     Hackathon: "Smart India Hackathon",
+//     Venue: "Government of India",
+//     Dates: "30 October 2023",
+//     Team: "3 Members",
+//     Description: "Hello SIH",
+//     Link: "https://www.sih.gov.in"
+// },
+// {
+//     Hackathon: "Smart India Hackathon",
+//     Venue: "Government of India",
+//     Dates: "30 October 2023",
+//     Team: "3 Members",
+//     Description: "Hello SIH",
+//     Link: "https://www.sih.gov.in"
+// },
+// {
+//     Hackathon: "Smart India Hackathon",
+//     Venue: "Government of India",
+//     Dates: "30 October 2023",
+//     Team: "3 Members",
+//     Description: "Hello SIH",
+//     Link: "https://www.sih.gov.in"
+// },
+// {
+//     Hackathon: "Smart India Hackathon",
+//     Venue: "Government of India",
+//     Dates: "30 October 2023",
+//     Team: "3 Members",
+//     Description: "Hello SIH",
+//     Link: "https://www.sih.gov.in"
+// },
+// ];
 
-hackathon(data);
+// hackathon(data);
+fetch('http://localhost:5000/hackathon/allhack')
+    .then((response) => response.json())
+    .then((data) => {
+        // Handle the JSON data here
+        // console.log('hello')
+        // console.log(data);
+        hackathon(data)
+        // You can now display or manipulate the data in your HTML
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+// addUsers(data);
 
 function hackathon(data) {
     const container = document.querySelector('.container');
@@ -58,9 +72,10 @@ function hackathon(data) {
         block.appendChild(infoDiv);
 
         const infoParagraphs = [
-            `Venue : ${hackathonData.Venue}`,
-            `Dates : ${hackathonData.Dates}`,
-            `Max Team : ${hackathonData.Team}`,
+            // `Venue : ${hackathonData.Venue}`,
+            `Name : ${hackathonData.name}`,
+            `Deadline : ${hackathonData.Deadline}`,
+            `Max Team Members : ${hackathonData.pcount}`,
             `Description : ${hackathonData.Description}`
         ];
 
@@ -81,17 +96,22 @@ function hackathon(data) {
         buttonDiv.appendChild(createTeamButton);
         createTeamButton.addEventListener('click', function () {
             
-            const filePath = '/client/createTeam.html';
+            const filePath = ('/client/createTeam.html');
             window.open(filePath, '_self');
         });
 
         const registerButton = document.createElement('button');
+
+    
+
         registerButton.classList.add('btn');
         registerButton.style.float = 'right';
         registerButton.innerText = 'Register';
         buttonDiv.appendChild(registerButton);
         registerButton.addEventListener('click', function () {
-            window.open(hackathonData.Link, '_self');
+            window.open('/client/Profile&Registration_Page/getprofile.html', '_self');
+            
+
         });
     });
 }

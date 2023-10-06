@@ -1,0 +1,4 @@
+$(function(){
+    // Load the navigation bar using jQuery
+    $("#navbar").load("navbar/navbar.html");
+  });

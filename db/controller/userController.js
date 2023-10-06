@@ -1,5 +1,6 @@
 const User = require('../models/UserSchema')
 const mongoose=require('mongoose')
+const Team = require('../models/TeamSchema')
 
 // add user
 // update user
@@ -119,7 +120,29 @@ async function getoneuser(id){
 // remove friends
 // list friends
 
+async function getUserTeams(id){
+  try {
+    await User.aggregate([
+      {
+        $lookup:{
+          from:"teams",
+          localField:"_id",
+          foreignField:"teams",
+          as:"userteams"
+        }
+      }
+    ])
+    .then((doc)=>{
+      console.log(doc)
+      return doc
+  }).catch(e =>{
+      return e
+  })
+  } catch (error) {
+    console.error(error);
+  }
+  return 'Done'
+}
 
 
-
-module.exports = {addUser , editUser, loginUser,getalluser,getoneuser,addfriends}
+module.exports = {addUser , editUser, loginUser,getalluser,getoneuser,addfriends, getUserTeams}

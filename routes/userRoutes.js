@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const {addUser , editUser, loginUser, getalluser, getoneuser, addfriends} = require('../db/controller/userController')
+const {addUser , editUser, loginUser, getalluser, getoneuser, addfriends, getUserTeams} = require('../db/controller/userController')
 
 
 
@@ -77,6 +77,25 @@ router.post('/addfriend', async(req , res)=>{
         return res.send('frinds not added')
     }
 })
+
+router.get('/getteamsofuser/:id' , async(req , res)=>{
+    const userid  = req.params.id
+    console.log("userid",userid )
+    const teams = await getUserTeams(userid)
+    console.log("teams" , teams)
+    return res.send(teams)
+
+})
+
+// router.get('/getprofile' , async(req , res)=>{
+//     const userid  = req.params.id
+//     console.log("userid",userid )
+//     const teams = await (userid)
+//     console.log("teams" , teams)
+//     return res.send(teams)
+
+// })
+
 
 
 
