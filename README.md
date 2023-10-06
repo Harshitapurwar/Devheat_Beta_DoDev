@@ -30,6 +30,7 @@ Full-Stack Website for Finding Teammates on basis of skills
 ## Sneak Peek of Website 🙈 :
 ![home](https://github.com/Harshitapurwar/Devheat_Beta_DoDev/blob/tanya/Screenshot%202023-06-23%20012307.png)
 
+
 <table>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/64949957/159116105-15b9425c-1fec-4a52-84ba-cf97eef93891.png" alt="mockup" /></td>
