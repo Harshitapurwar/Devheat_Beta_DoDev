@@ -73,7 +73,7 @@ npm start
 ```
 ## Video Link 💻
 
-<a href="https://youtu.be/NzrP1WvIcAw?si=EfZ4PZlW9mq4Qdu1" >Video Link</a>
+<a href="https://drive.google.com/drive/folders/1-V6KIR37FUP_y3ALnh4zdu74XSaWS_w5?usp=sharing" >Video Link</a>
 
 <h2>📬 Contact</h2>
 
